@@ -1,0 +1,145 @@
+body {
+  font-family: "Bebas Neue", Helvetica, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-column-gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#banner {
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  background: url("../images/background.png");
+  height: 300px;
+
+  border: 2px solid rgb(102, 101, 101);
+
+  grid-template-columns: 1/13;
+}
+
+.box1 {
+  position: absolute;
+  top: 100px;
+  width: 400px;
+  height: 200px;
+  font-size: 48px;
+  animation: leftOne 5s ease-out forwards;
+}
+
+.box2 {
+  position: absolute;
+  top: 125px;
+  font-size: 56px;
+  width: 800px;
+  opacity: 0;
+  height: 100px;
+  left: 355px;
+  animation: leftTwo 4s 5s forwards;
+}
+
+.box3 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: 20px;
+  left: 0;
+  background-color: #ff4365;
+  animation: squareToCircle 2s 1s infinite alternate;
+}
+
+.box4 {
+  position: absolute;
+  z-index: 4;
+  /*overlaps with images*/
+  width: 200px;
+  opacity: 1;
+  height: 20%;
+  left: 8%;
+  bottom: 65%;
+}
+
+@keyframes leftOne {
+  0% {
+    left: -300px;
+    opacity: 0;
+  }
+  50% {
+    left: 50%;
+    opacity: 0.5;
+  }
+  70% {
+    width: 500px;
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    font-size: 96px;
+  }
+
+  100% {
+    width: 500px;
+    height: 300px;
+    opacity: 0;
+    left: 50%;
+    font-size: 100px;
+  }
+}
+
+@keyframes leftTwo {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    left: 50%;
+    opacity: 0.5;
+  }
+  70% {
+    width: 500px;
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    font-size: 70px;
+  }
+
+  100% {
+    width: 500px;
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    font-size: 70px;
+  }
+}
+
+@keyframes squareToCircle {
+  0% {
+    border-radius: 0 0 0 0;
+    background: ffce07;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 50% 0 0 0;
+    background: #ff4365;
+    transform: rotate(45deg);
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    background: #ffb17a;
+    transform: rotate(90deg);
+  }
+  75% {
+    border-radius: 50% 50% 50% 0;
+    background: #f6e27f;
+    transform: rotate(135deg);
+  }
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    background: #17a398;
+    transform: rotate(180deg);
+  }
+}
